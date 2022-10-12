@@ -1,0 +1,15 @@
+Project Ideas - Sarah, Aleks, Eoin
+
+Payrolls system
+	1. Check Employee name, bank Details, (Excel sheet for stuff about employee adn information(name, emails, surname etc))
+	2. Confirm amount of hours worked
+	3. Maths!!!!!!!!!!!!!!!!!
+	4. filling out pay information and sending payslip
+
+Things to do
+	-Powerpoint
+	-Video
+	-Research/Pick CI/CD tools
+	-Setup repository
+	-fill out evaulation sheet as we go
+	-create project name/team name
