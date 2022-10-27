@@ -3,11 +3,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Scanner;
 
 public class GetFilePath extends JPanel implements ActionListener {
     JButton buttonOpen, buttonSave;
     JTextArea text;
     JFileChooser fileChooser;
+    String nameFile;
     public GetFilePath(){
         super(new BorderLayout());
         text = new JTextArea(5,20);
@@ -36,6 +38,7 @@ public class GetFilePath extends JPanel implements ActionListener {
             if (rVal == JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
                 text.append("Opening: " + file.getName() + "\n");
+                nameFile = fileChooser.getSelectedFile().getAbsolutePath();
             } else {
                 text.append("Cancelled");
             }
