@@ -1,3 +1,5 @@
+import org.apache.commons.collections4.Get;
+
 /*
     (Name of project)
     CI/CD
@@ -8,10 +10,7 @@
  */
 public class Run {
     public static void main(String[] args) {
-        //To get filePath
-        GetFilePath file = new GetFilePath();
-        file.run();
-        String filePath = file.returnPath();
-        System.out.println(filePath);
+        GetFilePath x = new GetFilePath();
+        x.run();
     }
 }
