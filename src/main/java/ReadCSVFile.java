@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ReadCSVFile {
-    public ReadCSVFile(String path){
+    public void read(String path) {
         Scanner sc = null; // Sets up Scanner
         try { // Tries to get the file path
             sc = new Scanner(new File(path));

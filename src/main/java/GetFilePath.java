@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 public class GetFilePath extends JPanel implements ActionListener {
-    JButton buttonOpen, buttonSave;
+    JButton buttonOpen, buttonLoad;
     JTextArea text;
     JFileChooser fileChooser;
     String nameFile;
@@ -20,12 +20,12 @@ public class GetFilePath extends JPanel implements ActionListener {
         buttonOpen = new JButton("Open File");
         buttonOpen.addActionListener(this);
 
-        buttonSave = new JButton("Save File");
-        buttonSave.addActionListener(this);
+        buttonLoad =  new JButton("Load File");
+        buttonLoad.addActionListener(this);
 
         JPanel buttons = new JPanel();
         buttons.add(buttonOpen);
-        buttons.add(buttonSave);
+        buttons.add(buttonLoad);
         add(buttons,BorderLayout.PAGE_START);
         add(text,BorderLayout.CENTER);
     }
@@ -38,32 +38,27 @@ public class GetFilePath extends JPanel implements ActionListener {
                 File file = fileChooser.getSelectedFile();
                 text.append("Opening: " + file.getName() + "\n");
                 nameFile = fileChooser.getSelectedFile().getAbsolutePath();
-                returnPath();
             } else {
                 text.append("Cancelled");
             }
         }
+        if(e.getSource() == buttonLoad){
+            ReadCSVFile readCSV = new ReadCSVFile();
+            readCSV.read(nameFile);
+        }
     }
     public String returnPath(){
-        new ReadCSVFile(nameFile);
         return nameFile;
     }
-    private static void createAndShowGUI() {
-        //Create and set up the window.
+    public String run() {
         JFrame frame = new JFrame("FileChooserDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //Add content to the window.
         frame.add(new GetFilePath());
 
-        //Display the window.
         frame.pack();
         frame.setVisible(true);
-    }
-    public void run() {
-        //Turn off metal's use of bold fonts
-        UIManager.put("swing.boldMetal", Boolean.FALSE);
-        createAndShowGUI();
+        return nameFile;
     }
 
 }
