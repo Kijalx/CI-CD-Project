@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.Scanner;
 
 public class GetFilePath extends JPanel implements ActionListener {
     JButton buttonOpen, buttonSave;
@@ -39,21 +38,15 @@ public class GetFilePath extends JPanel implements ActionListener {
                 File file = fileChooser.getSelectedFile();
                 text.append("Opening: " + file.getName() + "\n");
                 nameFile = fileChooser.getSelectedFile().getAbsolutePath();
+                returnPath();
             } else {
                 text.append("Cancelled");
             }
-            if (e.getSource() == buttonSave) {
-                int returnVal = fileChooser.showSaveDialog(GetFilePath.this);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = fileChooser.getSelectedFile();
-                    //This is where a real application would save the file.
-                    text.append("Saving: " + file.getName() + "." + "\n");
-                } else {
-                    text.append("Saved");
-                }
-                text.setCaretPosition(text.getDocument().getLength());
-            }
         }
+    }
+    public String returnPath(){
+        new ReadCSVFile(nameFile);
+        return nameFile;
     }
     private static void createAndShowGUI() {
         //Create and set up the window.
@@ -67,15 +60,10 @@ public class GetFilePath extends JPanel implements ActionListener {
         frame.pack();
         frame.setVisible(true);
     }
-    public static void main(String[] args) {
-        //Schedule a job for the event dispatch thread:
-        //creating and showing this application's GUI.
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                //Turn off metal's use of bold fonts
-                UIManager.put("swing.boldMetal", Boolean.FALSE);
-                createAndShowGUI();
-            }
-        });
+    public void run() {
+        //Turn off metal's use of bold fonts
+        UIManager.put("swing.boldMetal", Boolean.FALSE);
+        createAndShowGUI();
     }
+
 }
