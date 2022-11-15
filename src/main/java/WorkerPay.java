@@ -4,8 +4,12 @@ public class WorkerPay {
     double overtime;
     double overtimePay;
     double normalPay;
-    public WorkerPay(double hours, double rate, double overtime, double overtimePay, double normalPay){
-
+    public WorkerPay(double hours, double rate, double overtime){
+        setHours(hours);
+        setOvertime(overtime);
+        setRate(rate);
+        setOvertimePay();
+        setNormalPay();
     }
     public double getHours() {
         return hours;
@@ -25,6 +29,7 @@ public class WorkerPay {
     }
 
     public void setRate(double wrate) {
+        //need to get rate from databas
         if(wrate > 10.5 && wrate < 13.5){
             rate = wrate;
         }
@@ -50,7 +55,7 @@ public class WorkerPay {
         return overtimePay;
     }
 
-    public void setOvertimePay(double overtimePay) {
+    public void setOvertimePay() {
         if(overtime > 0 && overtimePay < 3){
             overtimePay = overtime * (rate * 1.5);
         }
@@ -66,7 +71,9 @@ public class WorkerPay {
         return normalPay;
     }
 
-    public void setNormalPay(double wnormalPay) {
+    public void setNormalPay() {
+        //need to get id from dataBase
+        //database.id.rate
         if(hours > 0){
             normalPay = hours * rate;
         }
