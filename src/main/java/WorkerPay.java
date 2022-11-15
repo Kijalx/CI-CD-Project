@@ -4,20 +4,26 @@ public class WorkerPay {
     double overtime;
     double overtimePay;
     double normalPay;
-    public WorkerPay(double hours, double rate, double overtime){
+    double totalPay;
+    public WorkerPay(double hours, double rate){
         setHours(hours);
-        setOvertime(overtime);
         setRate(rate);
         setOvertimePay();
         setNormalPay();
+        setTotalPay();
     }
     public double getHours() {
         return hours;
     }
 
     public void setHours(double whours) {
-        if(whours > 0){
+        if(whours > 0 && whours <= 35){
             hours = whours;
+            overtime = 0;
+        }
+        else if(whours > 35){
+            overtime = whours - 35;
+            hours = whours - overtime;
         }
         else{
             throw new IllegalArgumentException("This is not a valid amount of hours"); // Outputs an error
@@ -30,7 +36,7 @@ public class WorkerPay {
 
     public void setRate(double wrate) {
         //need to get rate from databas
-        if(wrate > 10.5 && wrate < 13.5){
+        if(wrate >= 10.5){
             rate = wrate;
         }
         else{
@@ -42,25 +48,14 @@ public class WorkerPay {
         return overtime;
     }
 
-    public void setOvertime(double wovertime) {
-        if(wovertime >= 0){
-            overtime = wovertime;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a valid overtime"); // Outputs an error
-        }
-    }
 
     public double getOvertimePay() {
         return overtimePay;
     }
 
     public void setOvertimePay() {
-        if(overtime > 0 && overtimePay < 3){
+        if(overtime > 0){
             overtimePay = overtime * (rate * 1.5);
-        }
-        else if (overtimePay > 3){
-            overtimePay = overtime * (rate * 2);
         }
         else{
             overtimePay = 0;
@@ -74,11 +69,18 @@ public class WorkerPay {
     public void setNormalPay() {
         //need to get id from dataBase
         //database.id.rate
-        if(hours > 0){
-            normalPay = hours * rate;
+        normalPay = hours * rate;
+    }
+
+    public double getTotalPay() {
+        return totalPay;
+    }
+    public void setTotalPay(){
+        if(overtimePay > 0){
+            totalPay = normalPay + overtimePay;
         }
         else{
-            normalPay = 0;
+            totalPay = normalPay;
         }
     }
 }
