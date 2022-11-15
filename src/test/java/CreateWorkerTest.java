@@ -13,7 +13,7 @@ class CreateWorkerTest {
     @Test
     void testConstructor(){
         CreateWorker newWorker = new CreateWorker("Aleks","GB12ABCD10203012345678", "AAAABBCCDDD", 10.50);
-        assertEquals("Alek",newWorker.getName());
+        assertEquals("Aleks",newWorker.getName());
         assertEquals("GB12ABCD10203012345678",newWorker.getIban());
         assertEquals("AAAABBCCDDD",newWorker.getBic());
         assertEquals(10.50,newWorker.getRate());
