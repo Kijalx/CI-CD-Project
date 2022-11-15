@@ -11,12 +11,44 @@ class CreateWorkerTest {
     void setUp() {
     }
     @Test
+    void testConstructor(){
+    }
+
+    @Test
     void testName(){
 
     }
+
+    @Test
     void testIban(){
 
     }
+
+    @Test
+    void testIbanFail(){
+
+    }
+
+    @Test
+    void testBic(){
+
+    }
+
+    @Test
+    void testBicFail(){
+
+    }
+
+    @Test
+    void testRate(){
+
+    }
+
+    @Test
+    void testRateFail(){
+
+    }
+
     @AfterEach
     void tearDown() {
     }
