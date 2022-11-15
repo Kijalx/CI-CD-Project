@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="ProjectCICD" options="-parameters" />
+      <module name="ProjectCICD" options="" />
     </option>
   </component>
 </project>
