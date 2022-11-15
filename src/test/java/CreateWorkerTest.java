@@ -40,16 +40,6 @@ class CreateWorkerTest {
     }
 
     @Test
-    void testHours(){
-
-    }
-
-    @Test
-    void testHoursFail(){
-
-    }
-
-    @Test
     void testRate(){
 
     }
@@ -59,45 +49,6 @@ class CreateWorkerTest {
 
     }
 
-    @Test
-    void testOvertime(){
-
-    }
-
-    @Test
-    void testOvertimeFail(){
-
-    }
-
-    @Test
-    void testTotalPay(){
-
-    }
-
-    @Test
-    void testTotalPayFail(){
-
-    }
-
-    @Test
-    void testNormalPay(){
-
-    }
-
-    @Test
-    void testNormalPayFail(){
-
-    }
-
-    @Test
-    void testOvertimePay(){
-
-    }
-
-    @Test
-    void testOvertimePayFail(){
-
-    }
     @AfterEach
     void tearDown() {
     }
