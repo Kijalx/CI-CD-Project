@@ -2,25 +2,25 @@ Project Ideas - Sarah, Aleks, Eoin, Michael
 
 Payrolls system
 	1. A service which allows the users to add, edit and view their payment information for the company
-	2. The user can login and view all their details within the company, edit personal details and view payslips
+	2. The user can log in and view all their details within the company, edit personal details and view payslips
 	3. The service will also create payslips to be viewed by the user
 	4. Sends an email which tells the user that their payslip is ready to view 
 
 Things to do
-	-Powerpoint
+	-PowerPoint
 	-Video
 	-Research/Pick CI/CD tools
 		-DockerHub
 		-CircleCI
 		_AWS
 		-GitLab
-	-fill out evaulation sheet as we go
+	-fill out evaluation sheet as we go
 
 Done
 	-create project name/team name
 	-Setup repository
 	-Started java project
-	-Deligated tasks to each member
+	-Delegated tasks to each member
 
 Aleks
  -CircleCI

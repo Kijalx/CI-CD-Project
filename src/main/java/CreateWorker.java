@@ -3,7 +3,6 @@ public class CreateWorker {
     private String iban;
     private String bic;
     private double rate;
-    private double normalPay;
 
     public CreateWorker(String workerName, String workerIban, String workerBic, double workerRate) {
         setName(workerName);
@@ -54,15 +53,11 @@ public class CreateWorker {
     }
 
     public void setRate(double wrate) {
-        if(wrate > 10.5 && wrate < 13.5){
+        if(wrate >= 10.50){
             rate = wrate;
         }
         else{
             throw new IllegalArgumentException("This is not a rate"); // Outputs an error
         }
-    }
-
-    public double getNormalPay() {
-        return normalPay;
     }
 }
