@@ -29,7 +29,7 @@ public class WorkerPay {
     }
 
     public void setRate(double wrate) {
-        //need to get rate from database
+        //need to get rate from databas
         if(wrate > 10.5 && wrate < 13.5){
             rate = wrate;
         }
