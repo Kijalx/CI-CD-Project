@@ -1,15 +1,45 @@
-Project Ideas - Sarah, Aleks, Eoin
+Project Ideas - Sarah, Aleks, Eoin, Michael
 
 Payrolls system
-	1. Check Employee name, bank Details, (Excel sheet for stuff about employee adn information(name, emails, surname etc))
-	2. Confirm amount of hours worked
-	3. Maths!!!!!!!!!!!!!!!!!
-	4. filling out pay information and sending payslip
+	1. A service which allows the users to add, edit and view their payment information for the company
+	2. The user can login and view all their details within the company, edit personal details and view payslips
+	3. The service will also create payslips to be viewed by the user
+	4. Sends an email which tells the user that their payslip is ready to view 
 
 Things to do
 	-Powerpoint
 	-Video
 	-Research/Pick CI/CD tools
-	-Setup repository
+		-DockerHub
+		-CircleCI
+		_AWS
+		-GitLab
 	-fill out evaulation sheet as we go
+
+Done
 	-create project name/team name
+	-Setup repository
+	-Started java project
+	-Deligated tasks to each member
+
+Aleks
+ -CircleCI
+ -AWS
+Michael
+ -Gui
+ -FrontEnd/Website
+Eoin
+ -Rest
+ -Website for test
+Sarah
+ -Maths
+ -data language (SQL)
+
+
+
+MicroServices
+-DataBase creation (Sarah)
+-Email Notification (Eoin)
+-Add Employees (Aleks)
+-Payslip Creation (Michael)
+
