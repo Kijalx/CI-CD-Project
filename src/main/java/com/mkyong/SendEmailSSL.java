@@ -9,14 +9,14 @@ public class SendEmailSSL {
 
     public static void main(String[] args) {
 
-        final String username = "ci.cd.project2022@gmail.com";
+        final String username = "ci.cd.project2022@outlook.com";
         final String password = "CICD2022";
 
         Properties prop = new Properties();
-        prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "465");
+        prop.put("mail.smtp.host", "smtp.office365.com");
+        prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.socketFactory.port", "465");
+        prop.put("mail.smtp.socketFactory.port", "587");
         prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
         Session session = Session.getInstance(prop,
@@ -29,12 +29,12 @@ public class SendEmailSSL {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("from@gmail.com"));
+            message.setFrom(new InternetAddress("from@outlook.com"));
             message.setRecipients(
                     Message.RecipientType.TO,
                     InternetAddress.parse("to_username_a@gmail.com, to_username_b@yahoo.com")
             );
-            message.setSubject("Testing Gmail SSL");
+            message.setSubject("Testing outlook SSL");
             message.setText("Dear Mail Crawler,"
                     + "\n\n Please do not spam my email!");
 
