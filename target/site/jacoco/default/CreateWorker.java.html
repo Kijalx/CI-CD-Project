@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CreateWorker.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjectCICD</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">CreateWorker.java</span></div><h1>CreateWorker.java</h1><pre class="source lang-java linenums">public class CreateWorker {
+    private String name;
+    private String iban;
+    private String bic;
+    private double rate;
+
+<span class="fc" id="L7">    public CreateWorker(String workerName, String workerIban, String workerBic, double workerRate) {</span>
+<span class="fc" id="L8">        setName(workerName);</span>
+<span class="fc" id="L9">        setBic(workerBic);</span>
+<span class="fc" id="L10">        setRate(workerRate);</span>
+<span class="fc" id="L11">        setIban(workerIban);</span>
+<span class="fc" id="L12">    }</span>
+    public String getName() {
+<span class="fc" id="L14">        return name;</span>
+    }
+
+    public void setName(String wname) {
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if(wname.length() &gt; 3){</span>
+<span class="fc" id="L19">            name = wname;</span>
+        }
+        else{
+<span class="fc" id="L22">            throw new IllegalArgumentException(&quot;This is not a valid name must be 3 or more characters&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L24">    }</span>
+
+    public String getIban() {
+<span class="fc" id="L27">        return iban;</span>
+    }
+
+    public void setIban(String wiban) {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(wiban.length() == 22){</span>
+<span class="fc" id="L32">            iban = wiban;</span>
+        }
+        else{
+<span class="fc" id="L35">            throw new IllegalArgumentException(&quot;This is not a valid iban&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L37">    }</span>
+
+    public String getBic() {
+<span class="fc" id="L40">        return bic;</span>
+    }
+
+    public void setBic(String wbic) {
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (wbic.length() &gt; 8) {</span>
+<span class="fc" id="L45">            bic = wbic;</span>
+        } else {
+<span class="fc" id="L47">            throw new IllegalArgumentException(&quot;This is not a valid bic&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    public double getRate() {
+<span class="fc" id="L52">        return rate;</span>
+    }
+
+    public void setRate(double wrate) {
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if(wrate &gt;= 10.50){</span>
+<span class="fc" id="L57">            rate = wrate;</span>
+        }
+        else{
+<span class="fc" id="L60">            throw new IllegalArgumentException(&quot;This is not a rate&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L62">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
