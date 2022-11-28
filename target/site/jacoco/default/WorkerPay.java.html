@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WorkerPay.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjectCICD</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">WorkerPay.java</span></div><h1>WorkerPay.java</h1><pre class="source lang-java linenums">public class WorkerPay {
+    double hours;
+    double rate;
+    double overtime;
+    double overtimePay;
+    double normalPay;
+    double totalPay;
+<span class="fc" id="L8">    public WorkerPay(double hours, double rate){</span>
+<span class="fc" id="L9">        setHours(hours);</span>
+<span class="fc" id="L10">        setRate(rate);</span>
+<span class="fc" id="L11">        setOvertimePay();</span>
+<span class="fc" id="L12">        setNormalPay();</span>
+<span class="fc" id="L13">        setTotalPay();</span>
+<span class="fc" id="L14">    }</span>
+    public double getHours() {
+<span class="fc" id="L16">        return hours;</span>
+    }
+
+    public void setHours(double whours) {
+<span class="fc bfc" id="L20" title="All 4 branches covered.">        if(whours &gt; 0 &amp;&amp; whours &lt;= 35){</span>
+<span class="fc" id="L21">            hours = whours;</span>
+<span class="fc" id="L22">            overtime = 0;</span>
+        }
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        else if(whours &gt; 35){</span>
+<span class="fc" id="L25">            overtime = whours - 35;</span>
+<span class="fc" id="L26">            hours = whours - overtime;</span>
+        }
+        else{
+<span class="fc" id="L29">            throw new IllegalArgumentException(&quot;This is not a valid amount of hours&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L31">    }</span>
+
+    public double getRate() {
+<span class="fc" id="L34">        return rate;</span>
+    }
+
+    public void setRate(double wrate) {
+        //need to get rate from databas
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if(wrate &gt;= 10.5){</span>
+<span class="fc" id="L40">            rate = wrate;</span>
+        }
+        else{
+<span class="fc" id="L43">            throw new IllegalArgumentException(&quot;This is not a valid rate&quot;); // Outputs an error</span>
+        }
+<span class="fc" id="L45">    }</span>
+
+    public double getOvertime() {
+<span class="fc" id="L48">        return overtime;</span>
+    }
+
+
+    public double getOvertimePay() {
+<span class="fc" id="L53">        return overtimePay;</span>
+    }
+
+    public void setOvertimePay() {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if(overtime &gt; 0){</span>
+<span class="fc" id="L58">            overtimePay = overtime * (rate * 1.5);</span>
+        }
+        else{
+<span class="fc" id="L61">            overtimePay = 0;</span>
+        }
+<span class="fc" id="L63">    }</span>
+
+    public double getNormalPay() {
+<span class="fc" id="L66">        return normalPay;</span>
+    }
+
+    public void setNormalPay() {
+        //need to get id from dataBase
+        //database.id.rate
+<span class="fc" id="L72">        normalPay = hours * rate;</span>
+<span class="fc" id="L73">    }</span>
+
+    public double getTotalPay() {
+<span class="fc" id="L76">        return totalPay;</span>
+    }
+    public void setTotalPay(){
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if(overtimePay &gt; 0){</span>
+<span class="fc" id="L80">            totalPay = normalPay + overtimePay;</span>
+        }
+        else{
+<span class="fc" id="L83">            totalPay = normalPay;</span>
+        }
+<span class="fc" id="L85">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
