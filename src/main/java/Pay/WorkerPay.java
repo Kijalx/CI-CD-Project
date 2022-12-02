@@ -1,3 +1,5 @@
+package Pay;
+
 public class WorkerPay {
     double hours;
     double rate;
