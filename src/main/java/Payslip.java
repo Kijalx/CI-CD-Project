@@ -13,7 +13,7 @@ public class Payslip {
     public Payslip(String payslipID) {
 
 
-        name = database.get(payslipname)
+        name = database.get(payslipname);
             getWorkerDetails(payslipName);
             getWorkerDetails(payslipIban);
             getWorkerDetails(payslipBic);
