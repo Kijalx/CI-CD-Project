@@ -10,19 +10,22 @@ public class Payslip {
 
     private String iD;
 
-    public Payslip(String payslipName, String payslipIban, String payslipBic, double payslipRate, double payslipOvertime,
-                   double payslipOvertimePay, double payslipNormalPay, double payslipTotalPay, String payslipID) {
+    public Payslip(String payslipID) {
 
-            setWorkerDetails(payslipName);
-            setWorkerDetails(payslipIban);
-            setWorkerDetails(payslipBic);
-            setWorkerDetails(payslipIban);
-            setWorkerDetails(payslipRate);
-            setWorkerDetails(payslipOvertime);
-            setWorkerDetails(payslipOvertimePay);
-            setWorkerDetails(payslipNormalPay);
-            setWorkerDetails(payslipTotalPay);
+
+        name = database.get(payslipname)
+            getWorkerDetails(payslipName);
+            getWorkerDetails(payslipIban);
+            getWorkerDetails(payslipBic);
+            getWorkerDetails(payslipIban);
+            getWorkerDetails(payslipRate);
+            getWorkerDetails(payslipOvertime);
+            getWorkerDetails(payslipOvertimePay);
+            getWorkerDetails(payslipNormalPay);
+            getWorkerDetails(payslipTotalPay);
 
             setWorkerID(payslipID);
     }
+
+
 }
