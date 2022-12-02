@@ -1,5 +1,5 @@
 package Creation;
-
+//Need to make an email field for Eoins part
 public class CreateWorker {
     private String name;
     private String iban;
