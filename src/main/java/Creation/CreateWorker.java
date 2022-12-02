@@ -6,12 +6,30 @@ public class CreateWorker {
     private String bic;
     private double rate;
 
-    public CreateWorker(String workerName, String workerIban, String workerBic, double workerRate) {
+    private String email;
+
+    public CreateWorker(String workerName, String workerIban, String workerBic, double workerRate, String email) {
         setName(workerName);
         setBic(workerBic);
         setRate(workerRate);
         setIban(workerIban);
+        setEmail(email);
     }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String wemail) {
+        if(wemail.contains("@") == true){
+            email = wemail;
+            System.out.println("Hello");
+        }
+        else if(wemail.contains("@") == false){
+            System.out.println("bye");
+            throw new IllegalArgumentException("This is not a valid email must include @"); // Outputs an error
+        }
+    }
+
     public String getName() {
         return name;
     }
