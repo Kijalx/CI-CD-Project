@@ -1,15 +1,19 @@
 package Creation;
+
+import org.springframework.data.annotation.LastModifiedBy;
+
 //Need to make an email field for Eoins part
 public class CreateWorker {
-    private String name;
+    private String firstName;
+    private String lastName;
     private String iban;
     private String bic;
-    private double rate;
-
+    private int rate;
     private String email;
 
-    public CreateWorker(String workerName, String workerIban, String workerBic, double workerRate, String email) {
-        setName(workerName);
+    public CreateWorker(String workerFirstName, String workerLastName, String workerIban, String workerBic, int workerRate, String email) {
+        setFirstName(workerFirstName);
+        setLastName(workerLastName);
         setBic(workerBic);
         setRate(workerRate);
         setIban(workerIban);
@@ -22,21 +26,31 @@ public class CreateWorker {
     public void setEmail(String wemail) {
         if(wemail.contains("@") == true){
             email = wemail;
-            System.out.println("Hello");
         }
-        else if(wemail.contains("@") == false){
-            System.out.println("bye");
+        else{
             throw new IllegalArgumentException("This is not a valid email must include @"); // Outputs an error
         }
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String wname) {
-        if(wname.length() > 3){
-            name = wname;
+    public void setFirstName(String wFirstName) {
+        if(wFirstName.length() > 3){
+            firstName = wFirstName;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid name must be 3 or more characters"); // Outputs an error
+        }
+    }
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String wLastName) {
+        if(wLastName.length() > 3){
+            lastName = wLastName;
         }
         else{
             throw new IllegalArgumentException("This is not a valid name must be 3 or more characters"); // Outputs an error
@@ -68,12 +82,12 @@ public class CreateWorker {
         }
     }
 
-    public double getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(double wrate) {
-        if(wrate >= 10.50){
+    public void setRate(int wrate) {
+        if(wrate >= 10){
             rate = wrate;
         }
         else{
