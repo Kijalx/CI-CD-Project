@@ -8,9 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface WorkersRepository extends JpaRepository<CreateWorker, Integer> {
-
     @Query("select c from Contact c " +
-        "where lower(c.firstName) like lower(concat('%', :searchTerm, '%')) " +
-        "or lower(c.lastName) like lower(concat('%', :searchTerm, '%'))")
+            "where lower(c.firstName) like lower(concat('%', :searchTerm, '%')) " +
+            "or lower(c.lastName) like lower(concat('%', :searchTerm, '%'))")
     List<CreateWorker> search(@Param("searchTerm") String searchTerm);
 }
