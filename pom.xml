@@ -136,6 +136,11 @@
             <version>5.1.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>exampledata</artifactId>
+            <version>4.1.1</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,5 +1,7 @@
 package application.views.list;
 import Creation.CreateWorker;
+import application.Service.AccessingData;
+import application.repository.RandomDataGeneration;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -13,16 +15,20 @@ import com.vaadin.flow.router.Route;
 @PageTitle("Worker User Interface")
 @Route(value = "")
 public class ListView extends VerticalLayout {
+    private AccessingData data;
     Grid<CreateWorker> grid = new Grid<>(CreateWorker.class);
-    TextField filterByName = new TextField();
+    TextField filterText = new TextField();
     WorkerForm form;
 
-    public ListView() {
+    public ListView(AccessingData data) {
+        this.data = data;
         addClassName("list-view");
         setSizeFull();
         configureGrid();
         configureForm();
         add(getToolbar(), getContent());
+
+        updateList();
     }
 
     private Component getContent() {
@@ -46,14 +52,19 @@ public class ListView extends VerticalLayout {
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
     private HorizontalLayout getToolbar() {
-        filterByName.setPlaceholder("Filter by name...");
-        filterByName.setClearButtonVisible(true);
-        filterByName.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.setPlaceholder("Filter by name...");
+        filterText.setClearButtonVisible(true);
+        filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.addValueChangeListener(e -> updateList());
 
         Button addWorkerButton = new Button("Create Worker");
 
-        HorizontalLayout toolbar = new HorizontalLayout(filterByName, addWorkerButton);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText, addWorkerButton);
         toolbar.addClassName("toolbar");
         return toolbar;
+    }
+
+    private void updateList(){
+        grid.setItems(data.findAllWorkers(filterText.getValue()));
     }
 }
