@@ -38,6 +38,12 @@ public class RandomDataGeneration {
             workerGenerator.setData(CreateWorker::setIban,DataType.IBAN);
             workerGenerator.setData(CreateWorker::setBic, DataType.IBAN);
             workerGenerator.setData(CreateWorker::setRate, DataType.AMOUNT_OF_MONEY);
+
+            Random r = new Random(seed);
+            List<CreateWorker> workers = workerGenerator.create(50,seed).stream().collect(Collectors.toList());
+
+            workersRepo.saveAll(workers);
+            logs.info("Created");
         };
     }
 }

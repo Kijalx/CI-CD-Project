@@ -48,7 +48,7 @@ public class ListView extends VerticalLayout {
     private void configureGrid() {
         grid.addClassNames("Employee-Grid");
         grid.setSizeFull();
-        grid.setColumns("name", "iban", "bic", "rate");
+        grid.setColumns("firstname", "iban", "bic", "rate");
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
     private HorizontalLayout getToolbar() {
