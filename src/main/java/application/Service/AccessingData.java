@@ -27,9 +27,9 @@ public class AccessingData {
     }
     public void saveContact(CreateWorker worker){
         if(worker == null){
-            throw new IllegalArgumentException("This worker is not valid");
+            System.err.println("Contact is null. Are you sure you have connected your form to the application?");
+            return;
         }
-
         workersRepo.save(worker);
     }
 }
