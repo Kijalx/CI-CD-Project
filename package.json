@@ -118,8 +118,8 @@
     "@vaadin/virtual-list": "23.2.10",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
-    "line-awesome": "1.3.0",
     "lit": "2.4.1",
+    "lumo-css-framework": "^4.0.10",
     "proj4": "2.8.0"
   },
   "devDependencies": {
@@ -256,7 +256,7 @@
     "date-fns": "$date-fns",
     "@vaadin/multi-select-combo-box": "$@vaadin/multi-select-combo-box",
     "proj4": "$proj4",
-    "line-awesome": "$line-awesome"
+    "lumo-css-framework": "$lumo-css-framework"
   },
   "vaadin": {
     "dependencies": {
@@ -375,8 +375,8 @@
       "@vaadin/virtual-list": "23.2.10",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
-      "line-awesome": "1.3.0",
       "lit": "2.3.0",
+      "lumo-css-framework": "^4.0.10",
       "proj4": "2.8.0"
     },
     "devDependencies": {
@@ -395,6 +395,6 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "28c859aecabcefc3dd7b6e27501337693687d6fd4d98e5445a2cf4311412ee5b"
+    "hash": "de1743dc874765d1588cbf8bea7abe66b67ad0e9f1c6f57c8f855ce731c44a76"
   }
 }

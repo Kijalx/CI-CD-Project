@@ -2,96 +2,48 @@ package Creation;
 
 import org.springframework.data.annotation.LastModifiedBy;
 
-//Need to make an email field for Eoins part
-public class CreateWorker {
-    private String firstName;
-    private String lastName;
-    private String iban;
-    private String bic;
-    private int rate;
-    private String email;
+import javax.persistence.Entity;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
-    public CreateWorker(String workerFirstName, String workerLastName, String workerIban, String workerBic, int workerRate, String email) {
-        setFirstName(workerFirstName);
-        setLastName(workerLastName);
-        setBic(workerBic);
-        setRate(workerRate);
-        setIban(workerIban);
-        setEmail(email);
-    }
-    public String getEmail() {
-        return email;
-    }
+@Entity
+public class CreateWorker extends AbstractEntity {
+    @NotEmpty
+    private String firstName = "";
 
-    public void setEmail(String wemail) {
-        if(wemail.contains("@") == true){
-            email = wemail;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a valid email must include @"); // Outputs an error
-        }
+    @NotEmpty
+    private String lastName = "";
+
+    @Email
+    @NotEmpty
+    private String email = "";
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String wFirstName) {
-        if(wFirstName.length() > 3){
-            firstName = wFirstName;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a valid name must be 3 or more characters"); // Outputs an error
-        }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
+
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String wLastName) {
-        if(wLastName.length() > 3){
-            lastName = wLastName;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a valid name must be 3 or more characters"); // Outputs an error
-        }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getIban() {
-        return iban;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIban(String wiban) {
-        if(wiban.length() == 22){
-            iban = wiban;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a valid iban"); // Outputs an error
-        }
-    }
-
-    public String getBic() {
-        return bic;
-    }
-
-    public void setBic(String wbic) {
-        if (wbic.length() > 8) {
-            bic = wbic;
-        } else {
-            throw new IllegalArgumentException("This is not a valid bic"); // Outputs an error
-        }
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int wrate) {
-        if(wrate >= 10){
-            rate = wrate;
-        }
-        else{
-            throw new IllegalArgumentException("This is not a rate"); // Outputs an error
-        }
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
