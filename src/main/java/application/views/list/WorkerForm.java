@@ -1,6 +1,8 @@
 package application.views.list;
 
 import Creation.CreateWorker;
+import Creation.Hours;
+import Creation.Spec;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Key;
@@ -16,23 +18,27 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ValidationException;
 import com.vaadin.flow.shared.Registration;
 
-import java.awt.*;
-
+import java.util.List;
 public class WorkerForm extends FormLayout {
     private CreateWorker worker;
     TextField fullName = new TextField("Full Name");
-    TextField userIban = new TextField("IBAN");
-    TextField userBic = new TextField("BIC");
-    TextField userRate = new TextField("Rate");
+    TextField lastName = new TextField("Last Name");
     EmailField userEmail = new EmailField("Email");
     Button save = new Button("Save");
     Button delete = new Button("Delete");
     Button cancel = new Button("Cancel");
+    ComboBox<Spec> spec = new ComboBox<>("Spec");
+    ComboBox<Hours> hours = new ComboBox<>("Hours");
     Binder<CreateWorker> binder = new BeanValidationBinder<>(CreateWorker.class);
 
-    public WorkerForm(){
+    public WorkerForm(List<Hours> hoursworked, List<Spec> specofworker){
         binder.bindInstanceFields(this);
-        add(fullName,userIban,userBic,userRate,userEmail,createButtonLayout());
+
+        hours.setItems(hoursworked);
+        hours.setItemLabelGenerator(Hours::getName);
+        spec.setItems(specofworker);
+        spec.setItemLabelGenerator(Spec::getName);
+        add(fullName,lastName,userEmail,spec,hours,createButtonLayout());
     }
     private HorizontalLayout createButtonLayout() {
         save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
