@@ -36,7 +36,7 @@ INSERT INTO "CREATEWORKER" VALUES
 ('489e5de7-115f-46e4-b881-22aeea879cd7', 'larry.ciappi@ba.lk', 'Larry', 'Ciappi', '8db2356e-c5a4-461d-b231-6e13d4b48757', '5ce3bbc1-6561-4c71-aa33-382692322b40'),
 ('128dde1f-46ad-4401-8901-6097a6e4dc37', 'ronnie.salucci@tohhij.lv', 'Ronnie', 'Salucci', '2fb669ec-0659-49fb-af9f-e6f71ce8156f', '72b11cec-0080-496a-a3a9-92494007befb'),
 ('14bd5c43-f277-4f17-a235-818d53e0ba54', 'walter.grossi@tuvo.sa', 'Walter', 'Grossi', '2fb669ec-0659-49fb-af9f-e6f71ce8156f', '72b11cec-0080-496a-a3a9-92494007befb');
-INSERT INTO "CONTACT" VALUES
+INSERT INTO "CREATEWORKER" VALUES
 ('66241aed-2891-4da5-8647-a75ed1723709', 'frances.koopmans@foga.tw', 'Frances', 'Koopmans', 'c58f8dd9-95dc-4d01-836b-4df6b37de527', 'b501cfdc-ea0b-4659-b6d5-0449467a9ca0'),
 ('95af9d1d-83a6-4a79-bb64-f9fea6b43835', 'frances.fujimoto@uswuzzub.jp', 'Frances', 'Fujimoto', '48767ba4-a9a2-4c0b-9ce9-cf0c53e8e45e', 'b501cfdc-ea0b-4659-b6d5-0449467a9ca0'),
 ('c870120c-5f25-4a57-992b-d265cfc4c831', 'olivia.vidal@hivwerip.vc', 'Olivia', 'Vidal', '2fb669ec-0659-49fb-af9f-e6f71ce8156f', '5ce3bbc1-6561-4c71-aa33-382692322b40'),

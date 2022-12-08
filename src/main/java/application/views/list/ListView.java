@@ -9,10 +9,15 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@PageTitle("Worker User Interface")
-@Route(value = "")
+import javax.annotation.security.PermitAll;
+
+@Component
+@Scope("prototype")
+@PageTitle("Workers | Vaadin CRM")
+@PermitAll
 public class ListView extends VerticalLayout {
     AccessingData data;
     Grid<CreateWorker> grid = new Grid<>(CreateWorker.class);
@@ -45,9 +50,9 @@ public class ListView extends VerticalLayout {
     }
 
     private void configureGrid() {
-        grid.addClassNames("contact-grid");
+        grid.addClassNames("workers-grid");
         grid.setSizeFull();
-        grid.setColumns("firstName", "lastName");
+        grid.setColumns("firstName", "lastName", "email");
         grid.addColumn(contact -> contact.getHours().getName()).setHeader("Hours");
         grid.addColumn(contact -> contact.getSpec().getName()).setHeader("Spec");
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
@@ -59,7 +64,7 @@ public class ListView extends VerticalLayout {
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateList());
 
-        Button addContactButton = new Button("Add contact");
+        Button addContactButton = new Button("Add Worker");
         addContactButton.addClickListener(click -> addContact());
 
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);

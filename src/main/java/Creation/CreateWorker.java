@@ -1,16 +1,16 @@
 package Creation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.annotation.LastModifiedBy;
-
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "CREATEWORKER")
 public class CreateWorker extends AbstractEntity {
     @NotEmpty
     private String firstName = "";
@@ -18,18 +18,19 @@ public class CreateWorker extends AbstractEntity {
     @NotEmpty
     private String lastName = "";
 
-    @Email
-    @NotEmpty
-    private String email = "";
-
     @ManyToOne
-    @JoinColumn(name = "spec_id")
+    @JoinColumn(name = "hours_id")
     @NotNull
-    @JsonIgnoreProperties({"workers"})
+    @JsonIgnoreProperties({"employees"})
     private Hours hours;
     @NotNull
     @ManyToOne
     private Spec spec;
+
+    @Email
+    @NotEmpty
+    private String email = "";
+
     @Override
     public String toString() {
         return firstName + " " + lastName;
