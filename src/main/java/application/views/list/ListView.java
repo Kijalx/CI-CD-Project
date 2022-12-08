@@ -1,7 +1,6 @@
 package application.views.list;
 import Creation.CreateWorker;
 import application.Service.AccessingData;
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -11,7 +10,6 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.hibernate.jdbc.Work;
 
 @PageTitle("Worker User Interface")
 @Route(value = "")
@@ -26,6 +24,7 @@ public class ListView extends VerticalLayout {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
+        form = new WorkerForm(data.findAllHours(),data.findAllSpec());
         form.setWidth("25em");
         form.addListener(WorkerForm.SaveEvent.class, this::saveContact);
         form.addListener(WorkerForm.DeleteEvent.class, this::deleteContact);
@@ -49,6 +48,8 @@ public class ListView extends VerticalLayout {
         grid.addClassNames("contact-grid");
         grid.setSizeFull();
         grid.setColumns("firstName", "lastName");
+        grid.addColumn(contact -> contact.getHours().getName()).setHeader("Hours");
+        grid.addColumn(contact -> contact.getSpec().getName()).setHeader("Spec");
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
     }
 
