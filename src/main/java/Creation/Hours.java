@@ -18,7 +18,7 @@ public class Hours extends AbstractEntity{
     @Nullable
     private List<CreateWorker> employees = new LinkedList<>();
 
-    @Formula("(select count(c.id) from CreateWorker c where c.spec_id = id)")
+    @Formula("(select count(c.id) from CreateWorker c where c.hours_id = id)")
     private int employeeCount;
 
     public String getName() {
