@@ -1,6 +1,6 @@
 package application.repository;
 
-import Creation.CreateWorker;
+import application.Creation.CreateWorker;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

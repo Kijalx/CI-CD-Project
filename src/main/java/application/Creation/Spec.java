@@ -1,4 +1,4 @@
-package Creation;
+package application.Creation;
 
 import javax.persistence.Entity;
 

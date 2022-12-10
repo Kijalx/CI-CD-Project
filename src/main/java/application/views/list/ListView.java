@@ -1,6 +1,7 @@
 package application.views.list;
-import Creation.CreateWorker;
+import application.Creation.CreateWorker;
 import application.Service.AccessingData;
+import application.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -9,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,7 @@ import javax.annotation.security.PermitAll;
 
 @Component
 @Scope("prototype")
+@Route(value="", layout = MainLayout.class)
 @PageTitle("Workers | Vaadin CRM")
 @PermitAll
 public class ListView extends VerticalLayout {
