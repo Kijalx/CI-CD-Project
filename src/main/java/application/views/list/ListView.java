@@ -33,7 +33,7 @@ public class ListView extends VerticalLayout {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
-        form = new WorkerForm(data.findAllHours(),data.findAllSpec());
+        form = new WorkerForm(data.());
         form.setWidth("25em");
         form.addListener(WorkerForm.SaveEvent.class, this::saveContact);
         form.addListener(WorkerForm.DeleteEvent.class, this::deleteContact);

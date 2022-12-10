@@ -31,7 +31,7 @@ public class WorkerForm extends FormLayout {
     ComboBox<Hours> hours = new ComboBox<>("Hours");
     Binder<CreateWorker> binder = new BeanValidationBinder<>(CreateWorker.class);
 
-    public WorkerForm(List<Hours> hoursworked, List<Spec> specofworker){
+    public WorkerForm(List<Hours> hours){
         binder.bindInstanceFields(this);
 
         hours.setItems(hoursworked);

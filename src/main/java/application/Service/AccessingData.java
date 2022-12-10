@@ -1,6 +1,7 @@
 package application.Service;
 
 import application.Creation.CreateWorker;
+import application.Creation.Hours;
 import application.repository.GroupRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -20,10 +21,10 @@ public class AccessingData {
         }
     }
     public long countWorkers(){
-        return workersRepo.count();
+        return groupRepo.count();
     }
     public void deleteWorker(CreateWorker worker){
-        workersRepo.delete(worker);
+        groupRepo.delete(worker);
     }
 
     public void saveContact(CreateWorker worker){
@@ -31,13 +32,10 @@ public class AccessingData {
             System.err.println("CreateWorker is null. Are you sure you have connected your form to the application?");
             return;
         }
-        workersRepo.save(worker);
+        groupRepo.save(worker);
     }
-    public List<Hours> findAllHours(){
-        return hoursrepo.findAll();
-    }
-    public List<Spec> findAllSpec(){
-        return specrepo.findAll();
-    }
+    public List<CreateWorker> findAllHours(String filterText){return groupRepo.findAll();}
+    //public List<Hours> findAllHours(){return groupRepo.findAll();}
+   // public List<> findAllSpec(){return specrepo.findAll();}
 
 }
