@@ -29,6 +29,7 @@ public class ListView extends VerticalLayout {
 
     public ListView(AccessingData data) {
         this.data = data;
+
         addClassName("list-view");
         setSizeFull();
         configureGrid();
@@ -111,4 +112,6 @@ public class ListView extends VerticalLayout {
     private void updateList() {
         grid.setItems(data.findAllWorkers(filterText.getValue()));
     }
+
+
 }

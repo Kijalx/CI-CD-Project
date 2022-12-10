@@ -1,30 +1,22 @@
 package application.Service;
 
 import application.Creation.CreateWorker;
-import application.Creation.Hours;
-import application.Creation.Spec;
-import application.repository.HoursRepository;
-import application.repository.SpecRepository;
-import application.repository.WorkersRepository;
+import application.repository.GroupRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
 public class AccessingData {
-    private final WorkersRepository workersRepo;
-    private final HoursRepository hoursrepo;
-    private final SpecRepository specrepo;
-    public AccessingData(WorkersRepository workersRepo, HoursRepository hoursRepo, SpecRepository specRepo){
-        this.workersRepo = workersRepo;
-        this.hoursrepo = hoursRepo;
-        this.specrepo = specRepo;
+    private final GroupRepository groupRepo;
+    public AccessingData(GroupRepository groupRepo){
+        this.groupRepo = groupRepo;
     }
     public List<CreateWorker> findAllWorkers(String filterText){
         if(filterText == null || filterText.isEmpty()){
-            return workersRepo.findAll();
+            return (List<CreateWorker>) groupRepo.findAll();
         }
         else{
-            return workersRepo.search(filterText);
+            return groupRepo.search(filterText);
         }
     }
     public long countWorkers(){
