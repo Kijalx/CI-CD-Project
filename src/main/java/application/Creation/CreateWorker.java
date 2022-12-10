@@ -41,7 +41,12 @@ public class CreateWorker extends AbstractEntity {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if(firstName.length() > 3){
+            this.firstName = firstName;
+        }
+        else{
+            throw new IllegalArgumentException("Not a valid first name");
+        }
     }
 
     public String getLastName() {
@@ -49,7 +54,12 @@ public class CreateWorker extends AbstractEntity {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if(lastName.length() > 3){
+            this.lastName = lastName;
+        }
+        else{
+            throw new IllegalArgumentException("Not a valid last name");
+        }
     }
 
     public String getEmail() {
@@ -57,15 +67,18 @@ public class CreateWorker extends AbstractEntity {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if(email.contains("@") == true){
+            this.email = email;
+        }
+        else{
+            throw new IllegalArgumentException("Not a valid email");
+        }
     }
 
     public Hours getHours() {
         return hours;
     }
-    public void setHours(Hours hours){
-        this.hours = hours;
-    }
+    public void setHours(Hours hours){this.hours = hours;}
 
     public void setSpec(Spec spec){
         this.spec = spec;
