@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
  * The entry point of the Spring Boot application.
  */
 @SpringBootApplication
-@EntityScan("Creation")
+@EntityScan("application/Creation")
 @NpmPackage(value = "lumo-css-framework", version = "^4.0.10")
 @Theme("flowcrmtutorial")
 @PWA(name = "VaadinCRM", shortName = "CRM", offlinePath="offline.html", offlineResources = { "./images/offline.png"})

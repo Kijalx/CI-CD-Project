@@ -1,8 +1,8 @@
 package application.views.list;
 
-import Creation.CreateWorker;
-import Creation.Hours;
-import Creation.Spec;
+import application.Creation.CreateWorker;
+import application.Creation.Hours;
+import application.Creation.Spec;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Key;
