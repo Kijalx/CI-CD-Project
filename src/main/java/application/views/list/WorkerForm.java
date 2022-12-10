@@ -81,7 +81,7 @@ public class WorkerForm extends FormLayout {
             this.worker = worker;
         }
 
-        public CreateWorker getContact() {
+        public CreateWorker getWorker() {
             return worker;
         }
     }

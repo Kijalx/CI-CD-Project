@@ -36,7 +36,7 @@ public class AccessingData {
 
     public void saveContact(CreateWorker worker){
         if(worker == null){
-            System.err.println("Contact is null. Are you sure you have connected your form to the application?");
+            System.err.println("CreateWorker is null. Are you sure you have connected your form to the application?");
             return;
         }
         workersRepo.save(worker);

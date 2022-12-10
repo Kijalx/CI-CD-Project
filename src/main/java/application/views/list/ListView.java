@@ -76,13 +76,13 @@ public class ListView extends VerticalLayout {
     }
 
     private void saveContact(WorkerForm.SaveEvent event) {
-        data.saveContact(event.getContact());
+        data.saveContact(event.getWorker());
         updateList();
         closeEditor();
     }
 
     private void deleteContact(WorkerForm.DeleteEvent event) {
-        data.deleteWorker(event.getContact());
+        data.deleteWorker(event.getWorker());
         updateList();
         closeEditor();
     }
