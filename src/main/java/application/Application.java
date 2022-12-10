@@ -6,18 +6,16 @@ import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
  * The entry point of the Spring Boot application.
- *
- * Use the @PWA annotation make the application installable on phones, tablets
- * and some desktop browsers.
- *
  */
 @SpringBootApplication
-@Theme(value = "flowcrmtutorial")
-@PWA(name = "Flow CRM Tutorial", shortName = "Flow CRM Tutorial", offlineResources = {})
-@NpmPackage(value = "line-awesome", version = "1.3.0")
+@EntityScan("application/Creation")
+@NpmPackage(value = "lumo-css-framework", version = "^4.0.10")
+@Theme("flowcrmtutorial")
+@PWA(name = "VaadinCRM", shortName = "CRM", offlinePath="offline.html", offlineResources = { "./images/offline.png"})
 public class Application implements AppShellConfigurator {
 
     public static void main(String[] args) {
