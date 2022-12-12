@@ -1,4 +1,4 @@
-#Running the Application
+# Running the Application
 Open Intellij IDE (Community or Professional)
 
 Run Application.java under src>main>java>application>Application.java
