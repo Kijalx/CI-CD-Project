@@ -9,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 import java.util.LinkedList;
 import java.util.List;
 
+//Hours Class
+
 @Entity
 public class Hours extends AbstractEntity{
     @NotBlank
@@ -18,6 +20,7 @@ public class Hours extends AbstractEntity{
     @Nullable
     private List<CreateWorker> employees = new LinkedList<>();
 
+    //@Formula Defines a formula (derived value) which is a SQL fragment that acts as a @Column alternative in most cases.
     @Formula("(select count(c.id) from CreateWorker c where c.hours_id = id)")
     private int employeeCount;
 

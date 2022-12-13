@@ -12,6 +12,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 import java.util.Collections;
 
+//Set up of web security for Vaadin
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig extends VaadinWebSecurity {

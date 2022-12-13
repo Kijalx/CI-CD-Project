@@ -7,10 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.UUID;
 
+// @MappedSuperclass  Designates a class whose mapping information is applied to the entities that inherit from it. A mapped superclass has no separate table defined for it.
 @MappedSuperclass
 public abstract class AbstractEntity {
+
+    //@ID Specifies the primary key of an entity.
     @Id
+    //@GeneratedValue GeneratedValue Provides for the specification of generation strategies for the values of primary keys.
     @GeneratedValue
+
     @Type(type = "uuid-char")
     private UUID id;
 
