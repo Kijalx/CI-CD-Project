@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: application.Creation.CreateWorkerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.142 s <<< FAILURE! - in application.Creation.CreateWorkerTest
+setLastNameFail  Time elapsed: 0.1 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at application.Creation.CreateWorkerTest.setLastNameFail(CreateWorkerTest.java:44)
+
+setEmailFail  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at application.Creation.CreateWorkerTest.setEmailFail(CreateWorkerTest.java:50)
+
+setFirstNameFail  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at application.Creation.CreateWorkerTest.setFirstNameFail(CreateWorkerTest.java:37)
+
