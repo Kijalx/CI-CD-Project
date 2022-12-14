@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.HighlightConditions;
 import com.vaadin.flow.router.RouterLink;
 
+//code for main layout of Workers after login
 public class MainLayout extends AppLayout {
     private final SecurityService securityService;
 

@@ -9,6 +9,10 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+//Home page for login
+//username : user     password: userpass
+
+//Vaadin provides the Router class to structure the navigation of your web application into logical parts.
 @Route("login")
 @PageTitle("Login | Vaadin CRM")
 public class LoginView extends VerticalLayout implements BeforeEnterObserver {
