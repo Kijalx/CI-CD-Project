@@ -9,16 +9,22 @@ import application.repository.WorkersRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+
+//Service class to access data
 @Service
 public class AccessingData {
     private final WorkersRepository workersRepo;
     private final HoursRepository hoursrepo;
     private final SpecRepository specrepo;
+
+    //injection of Repositories
     public AccessingData(WorkersRepository workersRepo, HoursRepository hoursRepo, SpecRepository specRepo){
         this.workersRepo = workersRepo;
         this.hoursrepo = hoursRepo;
         this.specrepo = specRepo;
     }
+
+    //create worker list using findAllWorkers
     public List<CreateWorker> findAllWorkers(String filterText){
         if(filterText == null || filterText.isEmpty()){
             return workersRepo.findAll();

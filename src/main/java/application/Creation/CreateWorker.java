@@ -9,18 +9,27 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+//Worker creation class
+
+// @ Entity Specifies that the class is an entity.
 @Entity
 @Table(name = "CREATEWORKER")
 public class CreateWorker extends AbstractEntity {
+
+    //The @NotEmpty annotation makes use of the @NotNull class' isValid() implementation, and also checks that the size/length of the supplied object  is greater than zero.
     @NotEmpty
     private String firstName = "";
 
     @NotEmpty
     private String lastName = "";
 
+    //@ManyToOne Specifies a single-valued association to another entity class that has many-to-one multiplicity.
     @ManyToOne
+    //@joinColumn Specifies a column for joining an entity association or element collection.
     @JoinColumn(name = "hours_id")
     @NotNull
+
+    //@JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored.
     @JsonIgnoreProperties({"employees"})
     private Hours hours;
     @NotNull

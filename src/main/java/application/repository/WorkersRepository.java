@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+//Jpa Repository For Workers
 public interface WorkersRepository extends JpaRepository<CreateWorker, Integer> {
     @Query(value = "select c from CreateWorker c " +
             "where lower(c.firstName) like lower(concat('%', :searchTerm, '%')) " +
