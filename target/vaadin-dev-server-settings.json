@@ -1,13 +1,13 @@
 {
-  "frontendFolder": "C:/Users/aleks/OneDrive/Desktop/CI-CD-Project/frontend",
+  "frontendFolder": "C:/Users/g00396018.GMADTREE/IdeaProjects/CI-CD-Project2/./frontend",
   "themeFolder": "themes",
-  "themeResourceFolder": "C:/Users/aleks/OneDrive/Desktop/CI-CD-Project/target/flow-frontend",
-  "staticOutput": "C:/Users/aleks/OneDrive/Desktop/CI-CD-Project/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "themeResourceFolder": "C:/Users/g00396018.GMADTREE/IdeaProjects/CI-CD-Project2/target/flow-frontend",
+  "staticOutput": "C:/Users/g00396018.GMADTREE/IdeaProjects/CI-CD-Project2/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
   "generatedFolder": "generated",
-  "frontendBundleOutput": "C:\\Users\\aleks\\OneDrive\\Desktop\\CI-CD-Project\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "frontendBundleOutput": "C:\\Users\\g00396018.GMADTREE\\IdeaProjects\\CI-CD-Project2\\target\\classes\\META-INF\\VAADIN\\webapp",
   "addonFrontendFolder": "target/flow-frontend/",
   "themeName": "flowcrmtutorial",
-  "clientServiceWorkerSource": "C:\\Users\\aleks\\OneDrive\\Desktop\\CI-CD-Project\\target\\sw.ts",
+  "clientServiceWorkerSource": "C:\\Users\\g00396018.GMADTREE\\IdeaProjects\\CI-CD-Project2\\target\\sw.ts",
   "pwaEnabled": true,
   "offlineEnabled": true,
   "offlinePath": "'offline.html'"
